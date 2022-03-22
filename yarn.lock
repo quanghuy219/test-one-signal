@@ -8970,6 +8970,11 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
+react-onesignal@^2.0.0-beta1:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/react-onesignal/-/react-onesignal-2.0.3.tgz#3c4cd656f811c3502f40b61854fbbfb86bbf499c"
+  integrity sha512-zX27Hig31g7wypEaJSzgSIjO/DsxqPqTaJA1/l1T0qmbRTyabL/FslWjjnPQDvQQHtix+KNw8q4pQ5BzGPXEig==
+
 react-refresh@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
