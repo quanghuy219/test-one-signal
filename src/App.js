@@ -6,31 +6,23 @@ import logo from "./logo.png";
 function App() {
   useEffect(() => {
     OneSignal.init({
-      appId: "1f5f4be6-c0cb-4b06-9627-32b627ac8f80",
+      appId: "96c1718d-c4a1-4ce7-8583-59d39cabeaee",
     });
   }, []);
-
-  const onHandleTag = (tag) => {
-    console.log("Tagging");
-    OneSignal.sendTag("tech", tag).then(() => {
-      console.log("Sent tag: " + tag);
-    });
-  };
 
   return (
     <div className="App">
       <img src={logo} className="App-logo" alt="logo" />
       <div className="tags">
-        <button className="btn btn--react" onClick={() => onHandleTag("react")}>
+        <button className="btn btn--react">
           ReactJS
         </button>
         <button
           className="btn btn--angular"
-          onClick={() => onHandleTag("angular")}
         >
           Angular
         </button>
-        <button className="btn btn--vue" onClick={() => onHandleTag("vue")}>
+        <button className="btn btn--vue">
           Vue
         </button>
       </div>
