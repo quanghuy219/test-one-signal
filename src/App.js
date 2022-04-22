@@ -51,7 +51,7 @@ function App() {
         />
       </form>
 
-      <button onClick={() => OneSignal.removeExternalUserId()}>Remove Exter User Id</button>
+      <button onClick={() => OneSignal.removeExternalUserId()}>Remove External User Id</button>
     </div>
   );
 }
