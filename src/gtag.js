@@ -27,6 +27,6 @@ export const install = (trackingId, additionalConfigInfo = {}) => {
     gtag("config", trackingId, additionalConfigInfo);
 };
 
-install("GTM-PSMS2KB");
+install("G-VLB107KTQ8");
 
 export default gtag;
