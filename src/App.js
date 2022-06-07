@@ -8,6 +8,8 @@ function App() {
   const [externalUserId, setExternalUserId] = useState("")
   const [key, setKey] = useState("")
   const [val, setVal] = useState("")
+  const [eventName, setEventName] = useState("")
+  const [eventData, setEventData] = useState("")
 
   useEffect(() => {
     OneSignal.init({
@@ -64,6 +66,35 @@ function App() {
             obj[key] = val
             console.log(obj)
             gtag("set", "user_properties", obj)
+          }
+          }
+        />
+      </form>
+          
+      <form>
+      <label htmlFor="eventname">Event</label>
+      <input
+        type="text"
+        id="eventname"
+        name="Name"
+        placeholder="Name"
+        onChange={e => setEventName(e.target.value)}
+      />
+      <textarea
+        type="text"
+        id="eventdata"
+        name="Data"
+        placeholder="Data"
+        onChange={e => setEventData(e.target.value)}
+      />
+      <input
+          type="submit"
+          value="Send event"
+          onClick={(e) => {
+            e.preventDefault()
+            let d = JSON.parse(eventData)
+            console.log(d)
+            gtag("event", eventName, d)
           }
           }
         />
