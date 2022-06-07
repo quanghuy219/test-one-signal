@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import "./App.css";
 import OneSignal from "react-onesignal";
-import logo from "./logo.png";
 import { useState } from "react";
+import gtag from "./gtag";
 
 function App() {
   const [externalUserId, setExternalUserId] = useState("")
+  const [key, setKey] = useState("")
+  const [val, setVal] = useState("")
 
   useEffect(() => {
     OneSignal.init({
@@ -13,24 +15,8 @@ function App() {
     });
   }, []);
 
-
   return (
     <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
-      <div className="tags">
-        <button className="btn btn--react">
-          ReactJS
-        </button>
-        <button
-          className="btn btn--angular"
-        >
-          Angular
-        </button>
-        <button className="btn btn--vue">
-          Vue
-        </button>
-      </div>
-
       <form>
         <label htmlFor="externalUserId">External User ID</label>
         <input
@@ -52,6 +38,36 @@ function App() {
       </form>
 
       <button onClick={() => OneSignal.removeExternalUserId()}>Remove External User Id</button>
+
+      <form>
+        <label htmlFor="usertag">User Property</label>
+        <input
+          type="text"
+          id="usertag"
+          name="Key"
+          placeholder="key"
+          onChange={e => setKey(e.target.value)}
+        />
+        <input
+          type="text"
+          id="usertagvalue"
+          name="Value"
+          placeholder="value"
+          onChange={e => setVal(e.target.value)}
+        />
+        <input
+          type="submit"
+          value="Set user property"
+          onClick={(e) => {
+            e.preventDefault()
+            let obj = {}
+            obj[key] = val
+            console.log(obj)
+            gtag("set", "user_properties", obj)
+          }
+          }
+        />
+      </form>
     </div>
   );
 }
